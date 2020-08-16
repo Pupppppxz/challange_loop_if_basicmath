@@ -5,37 +5,38 @@
 int main()
 {
 	int a, b, sum1 = 0, sum3 = 0, count = 0;
-	float avg = 0, SD = 0;
+	float avg = 0;
+	float SD = 0;
 	scanf("%d %d", &a, &b);
+	avg = (b + a) * 0.5;
 	if (a < b) {
 		for (int i = a; i <= b; i++)
 		{
 			printf("%d\t", i);
-			sum1 += i;
 			count += 1;
-			sum3 += (i * i);
+			SD += ((i - avg)*(i - avg));
 		}
-		avg = sum1 / count;
-		printf("\nAVG = %.2f", avg);
-		SD = sqrt(((count * sum3) - sum3) / (count * (count - 1)));
+		printf("\nAverage = %.2f", avg);
+		SD = sqrt(SD / (abs(a - b)));
 		printf("\nS.D. = %.2f", SD);
 	}
 	else if (a > b) {
 		for (int i = a; i >= b; i--)
 		{
 			printf("%d\t", i);
-			sum1 += i;
 			count += 1;
-			sum3 += (i * i);
+			SD += ((i - avg) * (i - avg));
 		}
-		avg = sum1 / count;
-		printf("\nAVG = %.2f", avg);
-		SD = sqrt(((count * sum3) - sum3) / (count * (count - 1)));
+		printf("\nAverage = %.2f", avg);
+		SD = sqrt(SD / (abs(a - b)));
 		printf("\nS.D. = %.2f", SD);
 	}
-	else {
+	else if (a == b){
 		printf("Error");
 	}
+
+	return 0;
+}
 
 	return 0;
 }
