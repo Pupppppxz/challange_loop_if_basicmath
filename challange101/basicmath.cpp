@@ -4,7 +4,7 @@
 
 int main()
 {
-	int a, b, sum1 = 0, sum3 = 0, count = 0;
+	int a, b;
 	float avg = 0;
 	float SD = 0;
 	scanf("%d %d", &a, &b);
@@ -13,7 +13,6 @@ int main()
 		for (int i = a; i <= b; i++)
 		{
 			printf("%d\t", i);
-			count += 1;
 			SD += ((i - avg)*(i - avg));
 		}
 		printf("\nAverage = %.2f", avg);
@@ -24,7 +23,6 @@ int main()
 		for (int i = a; i >= b; i--)
 		{
 			printf("%d\t", i);
-			count += 1;
 			SD += ((i - avg) * (i - avg));
 		}
 		printf("\nAverage = %.2f", avg);
